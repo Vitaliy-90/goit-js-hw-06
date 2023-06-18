@@ -20,7 +20,7 @@ function createDiv() {
       div.style.height = `${30 + (i - 1) * 10}px`;
       div.style.backgroundColor = getRandomHexColor();
       div.style.borderRadius = "50%";
-      boxes.push(i);
+      boxes.push(div);
     }
     divBoxes.append(...boxes);
   } else {
@@ -31,4 +31,9 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
+}
+
+function destroyDiv() {
+  input.value = "";
+  divBoxes.innerHTML = "";
 }
